@@ -13,7 +13,7 @@
     <nav>
         <ul class="group1"> I
             <li>follow the mouse</li>
-            <li>stop at the edge</li>
+            <li>stay within edges</li>
             <li>center the cursor</li>
             <li>ease</li>
             <li>flee from mouse</li>
@@ -33,15 +33,18 @@
             <li></li>
             <li></li>
         </ul>
+        <p>no eventListener on resize this page yet, so if browser is resized, remember to refresh page in order to see effect
+            correctly</p>
     </nav>
     <main>
         <section id="follow-mouse">
             <h1>follow the mouse</h1>
             <iframe src="../follow-mouse.html" frameborder="0"></iframe>
         </section>
-        <section>
-            <h1></h1>
-            <iframe src="" frameborder="0"></iframe>
+        <section id="stop-within-edges">
+            <h1>stay within edges</h1>
+            <p>** deal with border as well **</p>
+            <iframe src="../follow-mouse-inside.html" frameborder="0"></iframe>
         </section>
         <section>
             <h1></h1>
