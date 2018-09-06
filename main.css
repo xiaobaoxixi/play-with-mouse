@@ -13,6 +13,12 @@ nav {
 ul {
   margin-bottom: 30px;
 }
+nav p {
+  margin: 2em;
+  font-family: sans-serif;
+  color: #333;
+  font-size: 13px;
+}
 main {
   width: 70vw;
   position: absolute;
