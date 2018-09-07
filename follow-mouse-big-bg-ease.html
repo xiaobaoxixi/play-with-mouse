@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>follow mouse</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .background {
+            background-color: #E8DE6C;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .square {
+            background-image: url(../peach.gif);
+            background-size: cover;
+            width: calc(120vw*2);
+            height: calc(86vw*2);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="square"></div>
+    </div>
+    <script src="follow-mouse-big-bg-ease.js"></script>
+</body>
+
+</html>
