@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>follow mouse</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .background {
+            background-color: rgba(232, 222, 108, 0.7);
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .square {
+            background-color: rgba(255, 97, 73, 0.7);
+            width: 10vw;
+            height: 10vw;
+            white-space: pre;
+            padding: 3vw;
+            position: absolute;
+        }
+
+        .square1 {
+            opacity: .7;
+        }
+
+        .square2 {
+            opacity: .5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="square"></div>
+        <div class="square square1"></div>
+        <div class="square square2"></div>
+    </div>
+    <script src="follow-mouse-3square-ease.js"></script>
+</body>
+
+</html>
