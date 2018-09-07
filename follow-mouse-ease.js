@@ -8,33 +8,37 @@ let squarePositionX;
 let squarePositionY;
 let eachStepX;
 let eachStepY;
-const steps = 3;
+let mousePositionX;
+let mousePositionY;
+const steps = 31;
 
 window.addEventListener("DOMContentLoaded", followMouse);
 
 function followMouse() {
   window.addEventListener("mousemove", showMousePosition);
+  moveSquareWithEase(); // must call this here, otherwise read error
 }
 function showMousePosition(m) {
-  moveSquareWithEase(m.pageX, m.pageY);
+  mousePositionX = m.pageX;
+  mousePositionY = m.pageY;
 }
-function moveSquareWithEase(x, y) {
+function moveSquareWithEase() {
   squarePositionX = square.offsetLeft;
   squarePositionY = square.offsetTop;
   if (
-    squareWidth / 2 <= x &&
-    x <= windowWidth - squareWidth - 12 + squareWidth / 2 // 12px is the total width of the borders
+    squareWidth / 2 <= mousePositionX &&
+    mousePositionX <= windowWidth - squareWidth - 12 + squareWidth / 2 // 12px is the total width of the borders
   ) {
-    eachStepX = (x - squarePositionX - squareWidth / 2) / steps;
+    eachStepX = (mousePositionX - squarePositionX - squareWidth / 2) / steps;
     squarePositionX += eachStepX;
     square.style.left = `${squarePositionX}px`;
   }
 
   if (
-    squareHeight / 2 <= y &&
-    y <= windowHeight - squareHeight - 12 + squareHeight / 2
+    squareHeight / 2 <= mousePositionY &&
+    mousePositionY <= windowHeight - squareHeight - 12 + squareHeight / 2
   ) {
-    eachStepY = (y - squarePositionY - squareHeight / 2) / steps;
+    eachStepY = (mousePositionY - squarePositionY - squareHeight / 2) / steps;
     squarePositionY += eachStepY;
     square.style.top = `${squarePositionY}px`;
   }
