@@ -10,17 +10,17 @@ nav {
   height: calc(100vh - 170px);
   position: fixed;
   left: 0;
-  top: 170px;
+  top: 190px;
   padding: 30px 70px 70px 0;
   overflow: scroll;
 }
 body > h1 {
   position: fixed;
-  width: 30vw;
+  width: 20vw;
   top: 40px;
   margin-left: 35px;
   font-family: "Megrim", cursive;
-  font-size: 50px;
+  font-size: 61px;
 }
 h3 {
   margin-bottom: 0.5em;
@@ -31,6 +31,7 @@ ul {
 }
 li {
   margin-bottom: 0.5em;
+  cursor: pointer;
 }
 nav p {
   margin: 2em 2em 2em 30px;
@@ -39,9 +40,9 @@ nav p {
   font-size: 13px;
 }
 main {
-  width: 70vw;
+  width: 67vw;
   position: absolute;
-  left: 30vw;
+  left: 33vw;
   padding: 30px;
   display: grid;
   grid-gap: 30px;
@@ -49,6 +50,7 @@ main {
 section {
   width: 100%;
   height: 70%;
+  padding-top: 50px;
 }
 iframe {
   width: 60vw;
@@ -58,11 +60,11 @@ section p {
   width: 60vw;
 }
 footer {
+  background-color: white;
   position: fixed;
   bottom: 0;
-  background-color: white;
   width: 100vw;
   text-align: right;
   font-size: 13px;
-  padding: 7px 7.6vw 7px 7px;
+  padding: 7px 4vw 7px 7px;
 }
