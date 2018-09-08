@@ -60,15 +60,17 @@ function zoomInStep() {
   img.style.width = `${img.clientWidth * 2}px`;
   img.style.height = `${img.clientHeight * 2}px`;
   reCenter();
+  previousPositionX = (-window.innerWidth + img.clientWidth) / 2;
+  previousPositionY = (-window.innerHeight + img.clientHeight) / 2;
 }
 function zoomOutStep() {
   img.style.width = `${img.clientWidth / 2}px`;
   img.style.height = `${img.clientHeight / 2}px`;
-  //  img.style.left = `${window.innerWidth / 2 - img.clientWidth / 4}px`;
   reCenter();
+  previousPositionX = (-window.innerWidth + img.clientWidth) / 2;
+  previousPositionY = (-window.innerHeight + img.clientHeight) / 2;
 }
 function reCenter() {
-  //current size
   img.style.left = `${(window.innerWidth - img.clientWidth) / 2}px`;
   img.style.top = `${(window.innerHeight - img.clientHeight) / 2}px`;
 }
