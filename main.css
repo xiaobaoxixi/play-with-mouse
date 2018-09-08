@@ -9,12 +9,12 @@
   width: 0;
 }
 nav {
-  width: 30vw;
+  width: 25vw;
   height: calc(100vh - 170px);
   position: fixed;
   left: 0;
-  top: 190px;
-  padding: 30px 70px 70px 0;
+  top: 220px;
+  padding: 0px 70px 70px 0;
   overflow: scroll;
   border-right: 1px dashed lightgrey;
   cursor: ns-resize;
