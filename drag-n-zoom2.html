@@ -18,8 +18,8 @@
 
         .img {
             border: 2px solid black;
-            width: 160vw;
-            height: 120vw;
+            width: calc(160vw - 4px);
+            height: calc(120vw - 4px);
             background-image: url(img/bw.gif);
             background-size: cover;
             cursor: move;
@@ -68,8 +68,6 @@
         <aside>
             <h1>drag to edges</h1>
         </aside>
-        <button class="zoom-in">zoom in</button>
-        <button class="zoom-out">zoom out</button>
     </div>
     <script src="drag-n-zoom2.js"></script>
 </body>

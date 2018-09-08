@@ -11,15 +11,11 @@ let previousPositionX = 0;
 let previousPositionY = 0;
 let dragging = false;
 const img = document.querySelector(".img");
-const zoomIn = document.querySelector(".zoom-in");
-const zoomOut = document.querySelector(".zoom-out");
 
 function init() {
   window.addEventListener("mousedown", startDrag);
   window.addEventListener("mousemove", whileDrag);
   window.addEventListener("mouseup", stopDrag);
-  zoomIn.addEventListener("click", zoomInStep);
-  zoomOut.addEventListener("click", zoomOutStep);
 }
 function startDrag(m) {
   dragging = true;
@@ -30,12 +26,26 @@ function whileDrag(m) {
   if (dragging === true) {
     mousePositionX = m.pageX;
     mousePositionY = m.pageY;
-    img.style.left = `${-previousPositionX +
-      mousePositionX -
-      mouseStartPositionX}px`;
-    img.style.top = `${-previousPositionY +
-      mousePositionY -
-      mouseStartPositionY}px`;
+    if (
+      -previousPositionX + mousePositionX - mouseStartPositionX + 4 >=
+        window.innerWidth - img.clientWidth &&
+      -previousPositionX + mousePositionX - mouseStartPositionX < 4
+    )
+      // 4px border
+      img.style.left = `${-previousPositionX +
+        mousePositionX -
+        mouseStartPositionX -
+        2}px`;
+    if (
+      -previousPositionY + mousePositionY - mouseStartPositionY + 4 >=
+        window.innerHeight - img.clientHeight &&
+      -previousPositionY + mousePositionY - mouseStartPositionY < 4
+    )
+      // 4px border
+      img.style.top = `${-previousPositionY +
+        mousePositionY -
+        mouseStartPositionY -
+        2}px`;
   }
 }
 function stopDrag(m) {
@@ -44,13 +54,4 @@ function stopDrag(m) {
   previousPositionX += mouseStartPositionX - mouseStopPositionX;
   previousPositionY += mouseStartPositionY - mouseStopPositionY;
   dragging = false;
-}
-
-function zoomInStep() {
-  img.style.width = `${img.clientWidth * 2}px`;
-  img.style.height = `${img.clientHeight * 2}px`;
-}
-function zoomOutStep() {
-  img.style.width = `${img.clientWidth / 2}px`;
-  img.style.height = `${img.clientHeight / 2}px`;
 }
