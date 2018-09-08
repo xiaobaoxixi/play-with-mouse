@@ -16,7 +16,6 @@ function checkIfDone(li, index) {
   if (!iframe.getAttribute("src")) {
     liS[index].style.color = "lightgrey";
     liS[index].style.cursor = "none";
-    iframe.parentElement.querySelector("h1").style.color = "lightgrey";
     iframe.style.height = "0";
   }
   // instead of using the commented out code to seperate the function (which files without click event), use the code below
