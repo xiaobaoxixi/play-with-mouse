@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>drag and zoom</title>
+    <style>
+        div {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .img {
+            width: 160vw;
+            height: 120vw;
+            background-image: url(img/bw.gif);
+            background-size: cover;
+            cursor: move;
+        }
+
+        aside {
+            width: 100vw;
+            position: absolute;
+            top: 5vh;
+            font-family: sans-serif;
+            pointer-events: none;
+        }
+
+        aside h1 {
+            color: #E8DE6C;
+            font-size: 100px;
+            opacity: .9;
+            position: absolute;
+            top: calc(20vw - 50px);
+            left: calc(50vw - 20px);
+        }
+
+        button {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 4vw;
+            padding: 1vw 2vw;
+            background-color: black;
+            border: none;
+            color: white;
+            margin: .5vw;
+            cursor: pointer;
+        }
+
+        .center {
+            left: 7.5vw;
+        }
+
+        .zoom-out {
+            left: 15vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="frame"></div>
+        <div class="img"></div>
+        <aside>
+            <h1>⨯</h1>
+        </aside>
+        <button class="zoom-in">&#8853;</button>
+        <button class="center">&#8857;</button>
+        <button class="zoom-out">&#8854;</button>
+    </div>
+    <script src="drag-n-zoom3.js"></script>
+</body>
+
+</html>
