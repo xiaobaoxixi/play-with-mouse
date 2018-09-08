@@ -1,5 +1,6 @@
 "use strict";
-const div = document.querySelector("div");
+const divS = document.querySelectorAll("div");
+let div;
 let mousePositionX;
 let distanceX;
 let currentX;
@@ -7,12 +8,16 @@ let steps = 31;
 let backgroundPosition = 0;
 let eachStep = 0;
 
-window.addEventListener("DOMContentLoaded", checkMouseEnter);
+window.addEventListener("DOMContentLoaded", forEachDiv);
 
-function checkMouseEnter() {
-  div.addEventListener("mouseenter", listenToMouseMove);
-  div.addEventListener("mouseleave", ignoreMouseMove);
+function forEachDiv() {
+  divS.forEach(d => checkMouseEnter(d));
+}
+function checkMouseEnter(d) {
+  d.addEventListener("mouseenter", listenToMouseMove);
+  d.addEventListener("mouseleave", ignoreMouseMove);
   function listenToMouseMove() {
+    div = d;
     window.addEventListener("mousemove", getMousePosition);
   }
   function ignoreMouseMove() {
@@ -35,6 +40,5 @@ function moveFollowMouse() {
   currentX = Number(currentX);
   eachStep = (distanceX / steps) * 5;
   currentX += eachStep;
-  console.log(eachStep);
   div.style.backgroundPosition = `${currentX}px`;
 }
