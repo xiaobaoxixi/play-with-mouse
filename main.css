@@ -5,6 +5,9 @@
   position: relative;
   font-family: "Raleway", sans-serif;
 }
+::-webkit-scrollbar {
+  width: 0;
+}
 nav {
   width: 30vw;
   height: calc(100vh - 170px);
@@ -13,6 +16,8 @@ nav {
   top: 190px;
   padding: 30px 70px 70px 0;
   overflow: scroll;
+  border-right: 1px dashed lightgrey;
+  cursor: ns-resize;
 }
 body > h1 {
   position: fixed;
