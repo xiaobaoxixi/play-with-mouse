@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>drag and zoom</title>
+    <style>
+        div {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .img {
+            border: 2px solid black;
+            width: 160vw;
+            height: 120vw;
+            background-image: url(img/bw.gif);
+            background-size: cover;
+            cursor: move;
+        }
+
+        aside {
+            position: absolute;
+            top: 5vh;
+            font-family: sans-serif;
+            pointer-events: none;
+            text-align: right;
+        }
+
+        aside h1 {
+            color: #E8DE6C;
+            font-size: 11vw;
+            opacity: .9;
+            position: absolute;
+            top: 29vh;
+            left: 67vw;
+        }
+
+        button {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 4vw;
+            padding: 1vw 3vw;
+            background-color: black;
+            border: none;
+            color: white;
+            margin: .5vw;
+            cursor: pointer;
+        }
+
+        .zoom-out {
+            left: 21vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="frame"></div>
+        <div class="img"></div>
+        <aside>
+            <h1>drag to edges</h1>
+        </aside>
+        <button class="zoom-in">zoom in</button>
+        <button class="zoom-out">zoom out</button>
+    </div>
+    <script src="drag-n-zoom2.js"></script>
+</body>
+
+</html>
