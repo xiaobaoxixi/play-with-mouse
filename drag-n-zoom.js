@@ -11,11 +11,15 @@ let previousPositionX = 0;
 let previousPositionY = 0;
 let dragging = false;
 const img = document.querySelector(".img");
+const zoomIn = document.querySelector(".zoom-in");
+const zoomOut = document.querySelector(".zoom-out");
 
 function init() {
   window.addEventListener("mousedown", startDrag);
   window.addEventListener("mousemove", whileDrag);
   window.addEventListener("mouseup", stopDrag);
+  zoomIn.addEventListener("click", zoomInStep);
+  zoomOut.addEventListener("click", zoomOutStep);
 }
 function startDrag(m) {
   dragging = true;
@@ -40,4 +44,13 @@ function stopDrag(m) {
   previousPositionX += mouseStartPositionX - mouseStopPositionX;
   previousPositionY += mouseStartPositionY - mouseStopPositionY;
   dragging = false;
+}
+
+function zoomInStep() {
+  img.style.width = `${img.clientWidth * 2}px`;
+  img.style.height = `${img.clientHeight * 2}px`;
+}
+function zoomOutStep() {
+  img.style.width = `${img.clientWidth / 2}px`;
+  img.style.height = `${img.clientHeight / 2}px`;
 }

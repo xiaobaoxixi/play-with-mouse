@@ -40,11 +40,20 @@
         }
 
         button {
-            font-size: 2em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 4vw;
+            padding: 1vw 3vw;
             background-color: black;
             border: none;
             color: white;
             margin: .5vw;
+            cursor: pointer;
+        }
+
+        .zoom-out {
+            left: 21vw;
         }
     </style>
 </head>
@@ -55,9 +64,9 @@
         <div class="img"></div>
         <aside>
             <h1>drag</h1>
-            <button class="zoom-in">zoom in</button>
-            <button class="zoom-out">zoom out</button>
         </aside>
+        <button class="zoom-in">zoom in</button>
+        <button class="zoom-out">zoom out</button>
     </div>
     <script src="drag-n-zoom.js"></script>
 </body>
