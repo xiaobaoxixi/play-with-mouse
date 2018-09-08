@@ -3,11 +3,12 @@ let mousePositionY;
 window.addEventListener("DOMContentLoaded", checkMouse);
 
 function checkMouse() {
-  window.addEventListener("mousemove", getMousePosition);
+  window.addEventListener("mousemove", getMousePosition, moveLighting);
 }
 
 function getMousePosition(m) {
   mousePositionY = m.pageY;
+  document.querySelector(".dark1 h1").textContent = "";
   moveLighting();
 }
 
@@ -18,4 +19,7 @@ function moveLighting() {
   }
   document.querySelector(".dark1").style.height = `${mousePositionY -
     window.innerHeight / 6}px`;
+  if (mousePositionY > window.innerHeight / 2) {
+    document.querySelector(".dark1 h1").textContent = "reading light";
+  }
 }
