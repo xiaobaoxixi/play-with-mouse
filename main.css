@@ -57,3 +57,12 @@ iframe {
 section p {
   width: 60vw;
 }
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100vw;
+  text-align: right;
+  font-size: 13px;
+  padding: 7px 7.6vw 7px 7px;
+}
