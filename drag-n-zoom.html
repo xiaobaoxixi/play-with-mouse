@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>drag and zoom</title>
+    <style>
+        div {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .frame {}
+
+        .img {
+            background-image: url(img/bw.gif);
+            background-size: cover;
+            cursor: move;
+        }
+
+        aside {
+            position: absolute;
+            top: 5vh;
+            font-family: sans-serif;
+            pointer-events: none;
+        }
+
+        aside h1 {
+            color: #E8DE6C;
+            font-size: 31vw;
+            opacity: .9;
+            position: absolute;
+            top: 0;
+        }
+
+        button {
+            font-size: 2em;
+            background-color: black;
+            border: none;
+            color: white;
+            margin: .5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="frame"></div>
+        <div class="img"></div>
+        <aside>
+            <h1>drag</h1>
+            <button class="zoom-in">zoom in</button>
+            <button class="zoom-out">zoom out</button>
+        </aside>
+    </div>
+    <script src="drag-n-zoom.js"></script>
+</body>
+
+</html>
