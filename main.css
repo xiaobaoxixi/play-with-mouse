@@ -42,7 +42,7 @@ nav p {
 main {
   width: 67vw;
   position: absolute;
-  left: 33vw;
+  left: 31vw;
   padding: 30px;
   display: grid;
   grid-gap: 30px;
@@ -66,5 +66,5 @@ footer {
   width: 100vw;
   text-align: right;
   font-size: 13px;
-  padding: 7px 4vw 7px 7px;
+  padding: 7px 6vw 7px 7px;
 }
