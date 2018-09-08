@@ -13,7 +13,7 @@
 
         div {
             width: 100vw;
-            height: 290px;
+            height: 310px;
             position: relative;
             background-repeat: repeat-x;
             background-size: cover;
@@ -22,17 +22,38 @@
 
         div:nth-of-type(1) {
             background-image: url(img/img1.png);
-            top: 30px;
+            top: 70px;
         }
 
         div:nth-of-type(2) {
             background-image: url(img/img2.png);
-            top: -170px;
+            top: -130px;
         }
 
         div:nth-of-type(3) {
             background-image: url(img/img3.png);
-            top: -370px;
+            top: -340px;
+        }
+
+        aside {
+            position: fixed;
+            top: 0;
+            left: 1px;
+            font-family: sans-serif;
+        }
+
+        aside h1 {
+            font-size: 7vw;
+            color: #4288CE;
+        }
+
+        aside p:nth-of-type(3) {
+            color: #80ADDB;
+        }
+
+        aside p:nth-of-type(4),
+        aside p:nth-of-type(5) {
+            color: white;
         }
     </style>
 </head>
@@ -41,6 +62,15 @@
     <div></div>
     <div></div>
     <div></div>
+    <aside>
+        <h1>parallax - manual</h1>
+        <p></p>
+        <p></p>
+        <p>** triggered by individual mouse enter</p>
+        <p>** no ease with rAF</p>
+        <p>** infinite loop img til mouse reaches the edge</p>
+    </aside>
+
     <script src="paralax.js"></script>
 </body>
 

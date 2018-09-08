@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>follow mouse</title>
     <style>
+        * {
+            font-family: sans-serif;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -28,10 +32,28 @@
             padding: 3vw;
             position: absolute;
         }
+
+        aside {
+            position: fixed;
+            top: 0;
+        }
+
+        aside h1 {
+            font-size: 13vw;
+            text-align: right;
+        }
+
+        aside p {
+            font-size: 2vw;
+        }
     </style>
 </head>
 
 <body>
+    <aside>
+        <h1>stay within edges</h1>
+        <p>** deal with border as well **</p>
+    </aside>
     <div class="background">
         <div class="square"></div>
     </div>

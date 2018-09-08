@@ -11,7 +11,7 @@ function followMouse() {
   window.addEventListener("mousemove", showMousePosition);
 }
 function showMousePosition(m) {
-  square.textContent = `X: ${m.pageX} \nY: ${m.pageY}`;
+  //  square.textContent = `X: ${m.pageX} \nY: ${m.pageY}`;
   moveSquare(m.pageX, m.pageY);
 }
 function moveSquare(x, y) {
