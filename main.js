@@ -22,7 +22,6 @@ function checkIfDone(li, index) {
   // instead of using the commented out code to seperate the function (which files without click event), use the code below
   li.addEventListener("click", jumpToSection);
   function jumpToSection() {
-    console.log(iframeS[index].offsetTop);
     iframeS[index].parentElement.scrollIntoView({
       block: "start",
       inline: "nearest",
