@@ -39,6 +39,7 @@ ul {
 li {
   margin-bottom: 0.5em;
   cursor: pointer;
+  font-size: 0.85em;
 }
 nav p {
   margin: 2em 2em 2em 0;
