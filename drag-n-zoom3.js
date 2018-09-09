@@ -5,6 +5,8 @@ let mousePositionX;
 let mousePositionY;
 let mouseStartPositionX;
 let mouseStartPositionY;
+let imgStartPositionX;
+let imgStartPositionY;
 let mouseStopPositionX;
 let mouseStopPositionY;
 let previousPositionX = 0;
@@ -40,15 +42,17 @@ function startDrag(m) {
   dragging = true;
   mouseStartPositionX = m.pageX;
   mouseStartPositionY = m.pageY;
+  imgStartPositionX = img.offsetLeft;
+  imgStartPositionY = img.offsetTop;
 }
 function whileDrag(m) {
   if (dragging === true) {
     mousePositionX = m.pageX;
     mousePositionY = m.pageY;
-    img.style.left = `${-previousPositionX +
+    img.style.left = `${previousPositionX +
       mousePositionX -
       mouseStartPositionX}px`;
-    img.style.top = `${-previousPositionY +
+    img.style.top = `${previousPositionY +
       mousePositionY -
       mouseStartPositionY}px`;
   }
@@ -56,8 +60,9 @@ function whileDrag(m) {
 function stopDrag(m) {
   mouseStopPositionX = m.pageX;
   mouseStopPositionY = m.pageY;
-  previousPositionX += mouseStartPositionX - mouseStopPositionX;
-  previousPositionY += mouseStartPositionY - mouseStopPositionY;
+
+  previousPositionX += mouseStopPositionX - mouseStartPositionX;
+  previousPositionY += mouseStopPositionY - mouseStartPositionY;
   dragging = false;
 }
 
@@ -72,10 +77,10 @@ function zoomInStep() {
 
   img.style.width = `${img.clientWidth * zoomStep}px`;
   img.style.height = `${img.clientHeight * zoomStep}px`;
-  previousPositionX = (-window.innerWidth + img.clientWidth) / zoomStep;
-  previousPositionY = (-window.innerHeight + img.clientHeight) / zoomStep;
   img.style.left = `${img.offsetLeft - currentXAtCenter}px`;
   img.style.top = `${img.offsetTop - currentYAtCenter}px`;
+  previousPositionX = img.offsetLeft;
+  previousPositionY = img.offsetTop;
 }
 function zoomOutStep() {
   // check spot to keep at center, currentXAtS and currentYAtS are offset in relation to the top left corner of image
@@ -88,13 +93,14 @@ function zoomOutStep() {
 
   img.style.width = `${img.clientWidth / zoomStep}px`;
   img.style.height = `${img.clientHeight / zoomStep}px`;
-  previousPositionX = (-window.innerWidth + img.clientWidth) / zoomStep;
-  previousPositionY = (-window.innerHeight + img.clientHeight) / zoomStep;
-
   img.style.left = `${img.offsetLeft + currentXAtCenter / 2}px`;
   img.style.top = `${img.offsetTop + currentYAtCenter / 2}px`;
+  previousPositionX = img.offsetLeft;
+  previousPositionY = img.offsetTop;
 }
 function reCenter() {
   img.style.left = `${(window.innerWidth - img.clientWidth) / 2}px`;
   img.style.top = `${(window.innerHeight - img.clientHeight) / 2}px`;
+  previousPositionX = img.offsetLeft;
+  previousPositionY = img.offsetTop;
 }
