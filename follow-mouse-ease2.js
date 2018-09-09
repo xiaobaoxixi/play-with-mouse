@@ -32,18 +32,15 @@ function moveSquareWithEase(x, y) {
   document.querySelector(".square:last-of-type").style.top =
     squarePositionY + "px";
   if (
-    squareWidth / 2 <= x &&
-    x <= windowWidth - squareWidth - 12 + squareWidth / 2 // 12px is the total width of the borders
+    0 <= x &&
+    x <= windowWidth - 12 // 12px is the total width of the borders
   ) {
     eachStepX = (x - squarePositionX - squareWidth / 2) / steps;
     squarePositionX += eachStepX;
     square.style.left = `${squarePositionX}px`;
   }
 
-  if (
-    squareHeight / 2 <= y &&
-    y <= windowHeight - squareHeight - 12 + squareHeight / 2
-  ) {
+  if (0 <= y && y <= windowHeight - 12) {
     eachStepY = (y - squarePositionY - squareHeight / 2) / steps;
     squarePositionY += eachStepY;
     square.style.top = `${squarePositionY}px`;
