@@ -10,6 +10,8 @@ let mouseStopPositionY;
 let previousPositionX = 0;
 let previousPositionY = 0;
 let dragging = false;
+
+let zoomStep = 2;
 const img = document.querySelector(".img");
 const zoomIn = document.querySelector(".zoom-in");
 const zoomOut = document.querySelector(".zoom-out");
@@ -28,8 +30,8 @@ function init() {
   centerButton.addEventListener("click", reCenter);
 }
 function centerX() {
-  x.style.left = `${(window.innerWidth - x.clientWidth) / 2}px`;
-  x.style.top = `${(window.innerHeight - x.clientHeight) / 2 - 15}px`; // -15 is not precise, just eyeballed. font size setting influence element height,
+  x.style.left = `${(window.innerWidth - x.clientWidth) / zoomStep}px`;
+  x.style.top = `${(window.innerHeight - x.clientHeight) / zoomStep - 15}px`; // -15 is not precise, just eyeballed. font size setting influence element height,
 }
 function startDrag(m) {
   dragging = true;
@@ -57,18 +59,18 @@ function stopDrag(m) {
 }
 
 function zoomInStep() {
-  img.style.width = `${img.clientWidth * 2}px`;
-  img.style.height = `${img.clientHeight * 2}px`;
+  img.style.width = `${img.clientWidth * zoomStep}px`;
+  img.style.height = `${img.clientHeight * zoomStep}px`;
   reCenter();
-  previousPositionX = (-window.innerWidth + img.clientWidth) / 2;
-  previousPositionY = (-window.innerHeight + img.clientHeight) / 2;
+  previousPositionX = (-window.innerWidth + img.clientWidth) / zoomStep;
+  previousPositionY = (-window.innerHeight + img.clientHeight) / zoomStep;
 }
 function zoomOutStep() {
-  img.style.width = `${img.clientWidth / 2}px`;
-  img.style.height = `${img.clientHeight / 2}px`;
+  img.style.width = `${img.clientWidth / zoomStep}px`;
+  img.style.height = `${img.clientHeight / zoomStep}px`;
   reCenter();
-  previousPositionX = (-window.innerWidth + img.clientWidth) / 2;
-  previousPositionY = (-window.innerHeight + img.clientHeight) / 2;
+  previousPositionX = (-window.innerWidth + img.clientWidth) / zoomStep;
+  previousPositionY = (-window.innerHeight + img.clientHeight) / zoomStep;
 }
 function reCenter() {
   img.style.left = `${(window.innerWidth - img.clientWidth) / 2}px`;
