@@ -20,6 +20,9 @@ const centerPositionX = window.innerWidth / 2;
 const centerPositionY = window.innerHeight / 2;
 const x = document.querySelector("aside h1");
 
+let currentXAtCenter;
+let currentYAtCenter;
+
 function init() {
   centerX();
   window.addEventListener("mousedown", startDrag);
@@ -59,18 +62,37 @@ function stopDrag(m) {
 }
 
 function zoomInStep() {
+  // check spot to keep at center, currentXAtS and currentYAtS are offset in relation to the top left corner of image
+  currentXAtCenter =
+    img.clientWidth -
+    (img.offsetLeft + img.clientWidth - window.innerWidth / 2);
+  currentYAtCenter =
+    img.clientHeight -
+    (img.offsetTop + img.clientHeight - window.innerHeight / 2);
+
   img.style.width = `${img.clientWidth * zoomStep}px`;
   img.style.height = `${img.clientHeight * zoomStep}px`;
-  reCenter();
   previousPositionX = (-window.innerWidth + img.clientWidth) / zoomStep;
   previousPositionY = (-window.innerHeight + img.clientHeight) / zoomStep;
+  img.style.left = `${img.offsetLeft - currentXAtCenter}px`;
+  img.style.top = `${img.offsetTop - currentYAtCenter}px`;
 }
 function zoomOutStep() {
+  // check spot to keep at center, currentXAtS and currentYAtS are offset in relation to the top left corner of image
+  currentXAtCenter =
+    img.clientWidth -
+    (img.offsetLeft + img.clientWidth - window.innerWidth / 2);
+  currentYAtCenter =
+    img.clientHeight -
+    (img.offsetTop + img.clientHeight - window.innerHeight / 2);
+
   img.style.width = `${img.clientWidth / zoomStep}px`;
   img.style.height = `${img.clientHeight / zoomStep}px`;
-  reCenter();
   previousPositionX = (-window.innerWidth + img.clientWidth) / zoomStep;
   previousPositionY = (-window.innerHeight + img.clientHeight) / zoomStep;
+
+  img.style.left = `${img.offsetLeft + currentXAtCenter / 2}px`;
+  img.style.top = `${img.offsetTop + currentYAtCenter / 2}px`;
 }
 function reCenter() {
   img.style.left = `${(window.innerWidth - img.clientWidth) / 2}px`;
