@@ -15,13 +15,14 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init() {
   yellow.addEventListener("mousedown", startDrag);
-  yellow.addEventListener("mousemove", whileDrag);
-  yellow.addEventListener("mouseup", stopDrag);
 }
 
 function startDrag(m) {
   dragging = true;
   cancelAnimationFrame(rAF);
+  yellow.addEventListener("mousemove", whileDrag);
+  yellow.addEventListener("mouseup", stopDrag);
+  yellow.addEventListener("mouseleave", stopDrag);
   mouseStartPositionX = m.pageX;
   mouseStartPositionY = m.pageY;
   squareStartWidth = m.target.clientWidth;
@@ -40,6 +41,8 @@ function whileDrag(m) {
 function stopDrag(m) {
   console.log("up");
   dragging = false;
+  yellow.style.pointerEvent = "none";
+  yellow.removeEventListener("mousemove", whileDrag);
 }
 function drawbackAndTaint() {
   widthStep = (yellow.style.width.slice(0, -2) - 300) / 7;
@@ -51,9 +54,15 @@ function drawbackAndTaint() {
   } else {
     cancelAnimationFrame(rAF);
   }
-  document.querySelector(".yellow p").style.display = "none";
-  yellow.style.backgroundImage = `linear-gradient(to bottom right, #E8DE6C ${100 -
-    5 * meetCount}%,  rgba(27, 58, 99,.7) 5%,  rgb(27, 58, 99, ${1 -
-    0.01 * meetCount}))`;
-  orange.style.opacity = `${1 - 0.01 * meetCount}`;
+  // taint = filter blur + gradient
+  yellow.style.filter = "blur(2px)";
+  orange.style.filter = "blur(2px)";
+  document.querySelector(
+    "h1"
+  ).style.textShadow = `0 -1px 7px rgba(255, 98, 73, 0.9)`;
+  //  document.querySelector(".yellow p").style.display = "none";
+  yellow.style.backgroundImage = `radial-gradient(ellipse at top left, transparent ${100 -
+    5 * meetCount}%, rgba(114,125,100,.9))`; //rgba(27, 58, 99, .85),
+  orange.style.backgroundImage = `radial-gradient(ellipse at bottom right, transparent ${90 -
+    1.3 * meetCount}%, rgba(114,125,100,.9))`; //rgba(232, 222, 108, .5)
 }
