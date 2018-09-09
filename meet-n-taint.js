@@ -55,11 +55,11 @@ function drawbackAndTaint() {
     cancelAnimationFrame(rAF);
   }
   // taint = filter blur + gradient
-  yellow.style.filter = "blur(2px)";
-  orange.style.filter = "blur(2px)";
+  yellow.style.filter = "blur(1px)";
+  orange.style.filter = "blur(1px)";
   document.querySelector(
     "h1"
-  ).style.textShadow = `0 -1px 7px rgba(255, 98, 73, 0.9)`;
+  ).style.textShadow = `0 0 5px rgba(255, 98, 73, 0.9)`;
   //  document.querySelector(".yellow p").style.display = "none";
   yellow.style.backgroundImage = `radial-gradient(ellipse at top left, transparent ${100 -
     5 * meetCount}%, rgba(114,125,100,.9))`; //rgba(27, 58, 99, .85),
