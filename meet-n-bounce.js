@@ -31,7 +31,7 @@ function followMouse() {
 function pushPosition() {
   bigPositionXArray.push(bigPositionX);
   bigPositionYArray.push(bigPositionY);
-  setTimeout(pushPosition, 50);
+  setTimeout(pushPosition, 30);
   if (
     bigPositionXArray[bigPositionXArray.length - 2] <
     bigPositionXArray[bigPositionXArray.length - 1]
