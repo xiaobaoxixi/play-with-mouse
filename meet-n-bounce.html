@@ -18,7 +18,7 @@
             width: 100vw;
             height: 100vh;
             border: 2px solid rgb(232, 222, 108);
-            border-radius: 10vw;
+            overflow: hidden;
         }
 
         .ball {
@@ -39,17 +39,25 @@
             height: 13vw;
             border-radius: 13vw;
             background-color: rgb(27, 58, 99);
-            bottom: 13vh;
-            right: 7vw;
+            top: calc(50vh - 6.5vw);
+            left: calc(50vw - 6.5vw);
         }
 
-        h1 {
+        aside {
             pointer-events: none;
             position: fixed;
             bottom: 1em;
             left: 10vw;
-            font-size: 7vw;
             color: rgb(255, 98, 73);
+        }
+
+        aside h1 {
+            font-size: 11vw;
+        }
+
+        aside p {
+            font-family: sans-serif;
+            font-size: .7em;
         }
     </style>
 </head>
@@ -59,7 +67,12 @@
         <div class="ball big"></div>
         <div class="ball small"></div>
     </div>
-    <h1>meet & bounce</h1>
+    <aside>
+        <h1>meet & bully</h1>
+        <p>** no ease yet</p>
+        <p>** blue ball movement direction not fully based on the impact yet</p>
+        <p>** no bounce back from edge yet</p>
+    </aside>
     <script src="meet-n-bounce.js"></script>
 </body>
 
