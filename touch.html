@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>touch</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        div:not([class]) {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .frame {
+            display: grid;
+            grid-template-columns: repeat(7, 3vw);
+            grid-template-rows: repeat(7, 3vw);
+            grid-gap: 1px;
+            position: absolute;
+            bottom: 0;
+            grid-auto-flow: row;
+            transform: rotate(180deg);
+        }
+
+        .frame2 {
+            right: 0;
+        }
+
+        .frame div,
+        .drop {
+            left: 0;
+            width: 3vw;
+            height: 3vw;
+            background-color: rgb(255, 98, 73);
+        }
+
+        .frame2 div {
+            background-color: rgb(232, 222, 108);
+            right: 0;
+        }
+
+        .drop {
+            left: 48.5vw;
+            top: 12vw;
+            background-color: transparent;
+        }
+
+        aside {
+            width: 100vw;
+            position: fixed;
+            pointer-events: none;
+            top: 0;
+            color: rgb(27, 58, 99);
+        }
+
+        aside * {
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="frame frame1">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="frame frame2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="drop"></div>
+        <aside>
+            <h1>touch drag group</h1>
+        </aside>
+    </div>
+    <script src="touch.js"></script>
+</body>
+
+</html>
