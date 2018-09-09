@@ -18,9 +18,6 @@ function init() {
   function listen(d) {
     d.addEventListener("mousedown", startDrag);
     d.addEventListener("touchstart", startTouch);
-    d.addEventListener("touchmove", whileTouch);
-    document.addEventListener("touchend", stopTouch);
-    document.addEventListener("touchcancel", stopTouch);
   }
 }
 
@@ -42,14 +39,28 @@ function stopDrag(m) {
 }
 
 function startTouch(m) {
-  alert("touch start");
-}
-function startTouch(m) {
-  alert("touch start");
+  if (m.touches.length === 1) {
+    document.addEventListener("touchmove", whileTouch);
+    document.addEventListener("touchend", stopTouch);
+    document.addEventListener("touchcancel", stopTouch);
+    mouseStartPositionX = m.touches[0].clientX;
+    mouseStartPositionY = m.touches[0].clientY;
+    currentPositionX = m.target.offsetLeft;
+    currentPositionY = m.target.offsetTop;
+  }
 }
 function whileTouch(m) {
-  alert("touching");
+  if (m.touches.length === 1) {
+    m.target.style.left = `${currentPositionX +
+      m.touches[0].clientX -
+      mouseStartPositionX}px`;
+    m.target.style.top = `${currentPositionY +
+      m.touches[0].clientY -
+      mouseStartPositionY}px`;
+  }
 }
 function stopTouch(m) {
-  alert("touch stop");
+  document.removeEventListener("touchmove", whileTouch);
+  document.removeEventListener("touchend", stopTouch);
+  document.removeEventListener("touchcancel", stopTouch);
 }
