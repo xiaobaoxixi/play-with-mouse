@@ -21,9 +21,14 @@ let previousMovementX, previousMovementY;
 const steps = 7;
 let rAF;
 
-window.addEventListener("DOMContentLoaded", followMouse);
+window.addEventListener("DOMContentLoaded", init);
+
+function init() {
+  big.addEventListener("click", followMouse);
+}
 
 function followMouse() {
+  big.querySelector("p").textContent = "";
   window.addEventListener("mousemove", updateMousePosition);
   requestAnimationFrame(moveSquareWithEase);
   pushPosition();
@@ -62,7 +67,6 @@ function pushPosition() {
 function updateMousePosition(m) {
   mousePositionX = m.pageX;
   mousePositionY = m.pageY;
-  rAF = requestAnimationFrame(moveSquareWithEase);
 
   checkMeetEachother();
   //  checkMeetEdge();
