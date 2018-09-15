@@ -7,21 +7,30 @@
 div:not([class]) {
   width: 100vw;
   height: 100vh;
-  border: 3px solid orange;
-  overflow: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 3px solid rgb(27, 58, 99, 0.9);
 }
 .bg {
-  width: 37vw;
-  height: 73vh;
-  background-color: orange;
+  width: 90vw;
+  height: 90vw;
+  border-radius: 40vw;
+  background-color: rgb(27, 58, 99, 0.9);
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: -45vw;
+  left: -45vw;
 }
 .text {
-  width: 69vw;
-  height: 100vh;
-  left: 31vw;
-  font-size: 5vw;
+  width: 100vw;
+  height: auto;
+  padding: 70px 13vw;
+  font-size: 32px;
   font-family: sans-serif;
+  color: rgb(27, 58, 99, 0.9);
+  overflow: scroll;
+  text-align: justify;
+}
+.text p {
+  pointer-events: none;
 }
