@@ -3,15 +3,15 @@
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  let bg = document.querySelector(".bg");
-  //   let borderRight = bg.getBoundingClientRect().left + bg.clientWidth;
-  //   let borderTop = bg.getBoundingClientRect().top;
-  let p = document.querySelector(".text p").textContent.split("");
-  let text = document.querySelector(".text");
-  text.querySelector("p").innerHTML = "";
-  p.forEach(letter => {
-    text.querySelector("p").innerHTML += `<span>${letter}</span>`;
-  });
+  // let bg = document.querySelector(".bg");
+  // //   let borderRight = bg.getBoundingClientRect().left + bg.clientWidth;
+  // //   let borderTop = bg.getBoundingClientRect().top;
+  // let p = document.querySelector(".text p").textContent.split("");
+  // let text = document.querySelector(".text");
+  // text.querySelector("p").innerHTML = "";
+  // p.forEach(letter => {
+  //   text.querySelector("p").innerHTML += `<span>${letter}</span>`;
+  // });
   let spanS = document.querySelectorAll("span");
   let radius = window.innerWidth * 0.5;
   spanS.forEach(checkIfOverlap);
