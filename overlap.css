@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+div:not([class]) {
+  width: 100vw;
+  height: 100vh;
+  border: 3px solid orange;
+  overflow: scroll;
+}
+.bg {
+  width: 37vw;
+  height: 73vh;
+  background-color: orange;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.text {
+  width: 69vw;
+  height: 100vh;
+  left: 31vw;
+  font-size: 5vw;
+  font-family: sans-serif;
+}
