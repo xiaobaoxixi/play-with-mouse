@@ -32,12 +32,21 @@
             pointer-events: none;
         }
 
-        aside h1 {
+        aside h1,
+        aside p {
             color: #E8DE6C;
             font-size: 100px;
             opacity: .9;
             position: fixed;
             margin: 0;
+        }
+
+        aside p {
+            font-size: 25px;
+            width: 100vw;
+            text-align: center;
+            top: calc(50vh + 25px);
+
         }
 
         button {
@@ -69,6 +78,7 @@
         <div class="img"></div>
         <aside>
             <h1>⨯</h1>
+            <p>zoom on spot</p>
         </aside>
         <button class="zoom-in">&#8853;</button>
         <button class="center">&#8857;</button>
