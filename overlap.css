@@ -34,3 +34,12 @@ div:not([class]) {
 .text p {
   pointer-events: none;
 }
+.desc {
+  position: fixed;
+  top: 23px;
+  right: 9vw;
+  font-size: 5vw;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: rgb(27, 58, 99, 0.7);
+}
