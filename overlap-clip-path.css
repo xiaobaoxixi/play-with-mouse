@@ -1,0 +1,22 @@
+svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  fill: white;
+  pointer-events: none;
+}
+p {
+  text-align: justify;
+  text-justify: inter-character;
+}
+svg p {
+  font-size: 3px;
+  line-height: 3px;
+  color: white;
+}
+#svg1 foreignObject {
+  background-color: rgb(232, 222, 108);
+}
+#svg2 p {
+  color: rgb(27, 58, 99);
+}

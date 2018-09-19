@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clip-path</title>
+    <link rel="stylesheet" href="overlap-clip-path.css">
+</head>
+
+<body>
+    <svg id="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 70">
+        <foreignObject x="6.5" y="6.5" width="86" height="57">
+            <p xmlns="http://www.w3.org/1999/xhtml">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Duis
+                viverra ac orci et ullamcorper. Nam dapibus dolor magna, convallis sagittis turpis facilisis ut. Aenean
+                id ex vitae risus imperdiet ullamcorper non in arcu. Nulla venenatis scelerisque diam eget interdum.
+                Nulla luctus, dui porta fringilla viverra, lectus massa commodo nibh, eget ultricies mauris tortor eu
+                risus. Nulla et euismod nisi. Sed dapibus, tortor a ornare euismod, purus sapien mollis ex, ac dapibus
+                massa lorem ut justo. Vestibulum efficitur, nibh non volutpat pretium, lacus tortor lacinia tellus, ac
+                eleifend lectus turpis eu nibh. Donec tincidunt vitae risus non ultricies. Suspendisse aliquam, quam
+                vel vehicula faucibus, massa sem viverra ipsum, quis sagittis tortor nulla at augue. Duis consequat id
+                odio hendrerit congue. Nunc ipsum mauris, sagittis vel rutrum bibendum, consequat sit amet ligula.</p>
+            <p>Integer maximus gravida mauris sed fringilla. Integer urna odio, porta id pretium vel, mollis eu enim.
+                Integer et tempor ipsum. Cras pharetra orci ac accumsan aliquam. Cras nec facilisis felis. Duis non ex
+                porta, suscipit enim et, suscipit lacus. Integer dolor ligula, interdum ac erat a, maximus faucibus
+                leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi ut
+                dolor ipsum.</p>
+            <p>Morbi maximus ultrices nulla. Etiam a metus quis diam porttitor posuere. Aenean congue augue nec arcu
+                lobortis, ut semper libero consectetur. Integer nec lectus in ante consequat dictum. Nullam malesuada
+                porttitor purus. Fusce sagittis nunc ex, non aliquet dui scelerisque eget. Suspendisse eu luctus orci.
+                Praesent tincidunt massa leo, non commodo sem viverra venenatis. Sed eget dolor a est blandit pretium
+                vestibulum sed dui. Etiam tempor sodales risus id condimentum. Integer sollicitudin varius elit, non
+                commodo dui tempus nec.</p>
+        </foreignObject>
+    </svg>
+    <svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 70">
+        <defs>
+            <clipPath id="circlePath">
+                <circle cx="45" cy="35" r="20"></circle>
+            </clipPath>
+        </defs>
+        <foreignObject x="6.5" y="6.5" width="86" height="57" clip-path="url(#circlePath)">
+            <p xmlns="http://www.w3.org/1999/xhtml">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Duis
+                viverra ac orci et ullamcorper. Nam dapibus dolor magna, convallis sagittis turpis facilisis ut. Aenean
+                id ex vitae risus imperdiet ullamcorper non in arcu. Nulla venenatis scelerisque diam eget interdum.
+                Nulla luctus, dui porta fringilla viverra, lectus massa commodo nibh, eget ultricies mauris tortor eu
+                risus. Nulla et euismod nisi. Sed dapibus, tortor a ornare euismod, purus sapien mollis ex, ac dapibus
+                massa lorem ut justo. Vestibulum efficitur, nibh non volutpat pretium, lacus tortor lacinia tellus, ac
+                eleifend lectus turpis eu nibh. Donec tincidunt vitae risus non ultricies. Suspendisse aliquam, quam
+                vel vehicula faucibus, massa sem viverra ipsum, quis sagittis tortor nulla at augue. Duis consequat id
+                odio hendrerit congue. Nunc ipsum mauris, sagittis vel rutrum bibendum, consequat sit amet ligula.</p>
+            <p>Integer maximus gravida mauris sed fringilla. Integer urna odio, porta id pretium vel, mollis eu enim.
+                Integer et tempor ipsum. Cras pharetra orci ac accumsan aliquam. Cras nec facilisis felis. Duis non ex
+                porta, suscipit enim et, suscipit lacus. Integer dolor ligula, interdum ac erat a, maximus faucibus
+                leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi ut
+                dolor ipsum.</p>
+            <p>Morbi maximus ultrices nulla. Etiam a metus quis diam porttitor posuere. Aenean congue augue nec arcu
+                lobortis, ut semper libero consectetur. Integer nec lectus in ante consequat dictum. Nullam malesuada
+                porttitor purus. Fusce sagittis nunc ex, non aliquet dui scelerisque eget. Suspendisse eu luctus orci.
+                Praesent tincidunt massa leo, non commodo sem viverra venenatis. Sed eget dolor a est blandit pretium
+                vestibulum sed dui. Etiam tempor sodales risus id condimentum. Integer sollicitudin varius elit, non
+                commodo dui tempus nec.</p>
+        </foreignObject>
+    </svg>
+</body>
+
+</html>
