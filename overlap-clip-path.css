@@ -3,16 +3,19 @@ svg {
   top: 0;
   left: 0;
   fill: white;
-  pointer-events: none;
 }
 p {
   text-align: justify;
   text-justify: inter-character;
-}
-svg p {
-  font-size: 3px;
-  line-height: 3px;
+  font-size: 3.5px;
+  line-height: 4px;
   color: white;
+}
+foreignObject {
+  overflow: scroll;
+}
+#svg1 {
+  pointer-events: none;
 }
 #svg1 foreignObject {
   background-color: rgb(232, 222, 108);
