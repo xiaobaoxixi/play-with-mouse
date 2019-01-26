@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>offset-path</title>
+    <link rel="stylesheet" href="offset-path.css">
+</head>
+
+<body>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+        y="0px" viewBox="0 0 100 70">
+        <style type="text/css">
+            .st0 {
+                fill: none;
+                stroke: #1A1A1A;
+                stroke-width: 7;
+                stroke-miterlimit: 10;
+            }
+
+            .st1 {
+                fill: none;
+                stroke: #CCCCCC;
+                stroke-width: 0.5;
+                stroke-miterlimit: 10;
+                stroke-dasharray: 3;
+            }
+        </style>
+        <g>
+            <path class="st0" d="M-6.9,62.5c0,0,17.2,6.7,33.8-0.2S46.5,34.2,34.9,35c-9.6,0.6-11.3,10-6.1,13.6c6,4.2,41.8-1.5,77.5-49.6" />
+            <path class="st1" d="M-6.9,62.5c0,0,17.2,6.7,33.8-0.2S46.5,34.2,34.9,35c-9.6,0.6-11.3,10-6.1,13.6c6,4.2,41.8-1.5,77.5-49.6" />
+        </g>
+        <foreignObject>
+            <div class="car2"></div>
+        </foreignObject>
+    </svg>
+    <div class="car1"></div>
+    <div class="desc">
+        <p>&nbsp;&nbsp;To make sure element follow path: </p>
+        <p>- put moving element inside the <code>svg</code>, regardless viewBox setting</p>
+        <p>- when element is outside the <code>svg</code>, no way to control position??? </p>
+        <p>&nbsp;&nbsp;In current example viewBox is set to 100 70, red square is outside the <code>svg</code></p>
+    </div>
+</body>
+
+</html>
